@@ -1,109 +1,130 @@
-<div id='가로세로모드'>
-  <div id='이미지박스' class='vertical' style='max-width:375px; max-height:365px; z-index:3;'>
-    <div R='width:h(80); height:h(80); border-radius:70%;' style='background:rgba(0, 0, 0, 0.5); overflow:hidden;'>
-      프로필 사진을<br />찾을 수 없습니다
-      <img id='프사' src='//image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg' class='full' style='object-fit:cover; position:absolute;' />
+<!DOCTYPE html>
+<html style='display:block; min-height:300px;'>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico">
+    <title></title>
+    <meta name='description' content="">
+    <meta name='theme-color' content='#151515'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0'> 
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  </head>
+  <body>
+    <link href='/resources/master.css' rel='stylesheet' type='text/css'>
+    <script src='/resources/master.js'></script>
+    <div id='가로세로모드'>
+      <div id='이미지박스' class='vertical' style='max-width:375px; max-height:365px; z-index:3;'>
+        <div R='width:h(80); height:h(80); border-radius:70%;' style='background:rgba(0, 0, 0, 0.5); overflow:hidden;'>
+          프로필 사진을<br />찾을 수 없습니다
+          <img id='프사' src='//image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg' class='full' style='object-fit:cover; position:absolute;' />
+        </div>
+        <div id='경고문자' class='vertical bottomCenterAlign' R='height:h(9); width:w(1); margin-top:h(5);' style='overflow:visible'>
+          <img id='상태표시' src='https://i.imgur.com/TZJelqk.png' R='height:h(95); width:h(155); margin-bottom:h(-4);' style='object-fit:contain;'>
+          <span id='닉네임' R='height:h(100); font-size:h(90); font-family:payboocBold;' style='white-space:nowrap;'>고누리</span>
+          <img id='경고풍선' class='R [height:h(175); top:h(100)]' style='position:absolute; display:none; cursor:pointer;' src='https://i.imgur.com/INGEAXz.png'/>
+        </div>
+      </div>
+      <div id='옵션박스' class='vertical' style='max-width:500px; max-height:435.5px; z-index:1;'>
+        <div R='height:h(5);'></div>
+        <img id='카카오' src='/resources/images/kakao.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
+        <img id='토스' src='/resources/images/toss.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
+        <img id='은행' src='/resources/images/bank.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
+        <div class='bottomCenterAlign' R='height:h(15); font-size:w(4.1);'>
+          <span class='fontCenter' style='cursor:pointer;' onclick='window.open("https://SNSpay.cc", "_blank")'><a>Powered by</a> <b>SNSpay.cc</b></span>
+        </div>
+      </div>
+      <div id="닫기버튼" class='verticalShake' style='max-height:65px; max-width:65px; border-radius:70%; background:white; color:dimgray; cursor:pointer;'>
+        <b R='font-size:w(45);'>↓</b>
+      </div>
     </div>
-    <div id='경고문자' class='vertical bottomCenterAlign' R='height:h(9); width:w(1); margin-top:h(5);' style='overflow:visible'>
-      <img id='상태표시' src='https://i.imgur.com/TZJelqk.png' R='height:h(95); width:h(155); margin-bottom:h(-4);' style='object-fit:contain;'>
-      <span id='닉네임' R='height:h(100); font-size:h(90); font-family:payboocBold;' style='white-space:nowrap;'>고누리</span>
-      <img id='경고풍선' class='R [height:h(175); top:h(100)]' style='position:absolute; display:none; cursor:pointer;' src='https://i.imgur.com/INGEAXz.png'/>
+    <div id='덮개프레임' style='position:absolute; z-index:2; pointer-events:none; overflow:hidden'>
+      <div id='카카오덮개' style='position:absolute; background:#facb00; transform:scale(0);'>
+      </div>
+      <div id='토스덮개' style='position:absolute; background:#facb00; transform:scale(0);'>
+      </div>
+      <div id='은행덮개' style='position:absolute; background:#facb00; transform:scale(0);'>
+      </div>
     </div>
-  </div>
-  <div id='옵션박스' class='vertical' style='max-width:500px; max-height:435.5px; z-index:1;'>
-    <div R='height:h(5);'></div>
-    <img id='카카오' src='/resources/images/kakao.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
-    <img id='토스' src='/resources/images/toss.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
-    <img id='은행' src='/resources/images/bank.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
-    <div class='bottomCenterAlign' R='height:h(15); font-size:w(4.1);'>
-      <span class='fontCenter' style='cursor:pointer;' onclick='window.open("https://SNSpay.cc", "_blank")'><a>Powered by</a> <b>SNSpay.cc</b></span>
-    </div>
-  </div>
-  <div id="닫기버튼" class='verticalShake' style='max-height:65px; max-width:65px; border-radius:70%; background:white; color:dimgray; cursor:pointer;'>
-    <b R='font-size:w(45);'>↓</b>
-  </div>
-</div>
-<div id='덮개프레임' style='position:absolute; z-index:2; pointer-events:none; overflow:hidden'>
-  <div id='카카오덮개' style='position:absolute; background:#facb00; transform:scale(0);'>
-  </div>
-  <div id='토스덮개' style='position:absolute; background:#facb00; transform:scale(0);'>
-  </div>
-  <div id='은행덮개' style='position:absolute; background:#facb00; transform:scale(0);'>
-  </div>
-</div>
 
-
-<script>
-  f가로세로()
-  window.addEventListener("resize", function() {
+    <script>
       f가로세로()
-  })
-  function f가로세로(){
-      if(window.innerWidth < window.innerHeight || window.innerHeight > 500){
-          id('가로세로모드').className = 'vertical full noDrag'
-          id('이미지박스').setAttribute('R', 'width:h(35); height:h(32.5); margin:0;')
-          id('옵션박스').setAttribute('R', 'width:h(46.875); height:h(42.5); border-radius:h(2);')
-          id('닫기버튼').setAttribute('R', 'width:h(7); height:h(7); margin:h(3) 0 0 0;')
-          id('덮개프레임').setAttribute('R', 'width:h(100/16*10); height:h(100);')
-      }else{
-          id('가로세로모드').className = 'full noDrag'
-          id('이미지박스').setAttribute('R', 'width:w(32); height:w(32); margin:0 0 0 w(3);')
-          id('옵션박스').setAttribute('R', 'width:w(42.5); height:w(42.5*4/5); border-radius:w(2);')
-          id('닫기버튼').setAttribute('R', 'width:w(7); height:w(7); margin:0 0 0 w(3);')
-          id('덮개프레임').setAttribute('R', 'width:w(100); height:h(100);')
+      window.addEventListener("resize", function() {
+          f가로세로()
+      })
+      function f가로세로(){
+          if(window.innerWidth < window.innerHeight || window.innerHeight > 500){
+              id('가로세로모드').className = 'vertical full noDrag'
+              id('이미지박스').setAttribute('R', 'width:h(35); height:h(32.5); margin:0;')
+              id('옵션박스').setAttribute('R', 'width:h(46.875); height:h(42.5); border-radius:h(2);')
+              id('닫기버튼').setAttribute('R', 'width:h(7); height:h(7); margin:h(3) 0 0 0;')
+              id('덮개프레임').setAttribute('R', 'width:h(100/16*10); height:h(100);')
+          }else{
+              id('가로세로모드').className = 'full noDrag'
+              id('이미지박스').setAttribute('R', 'width:w(32); height:w(32); margin:0 0 0 w(3);')
+              id('옵션박스').setAttribute('R', 'width:w(42.5); height:w(42.5*4/5); border-radius:w(2);')
+              id('닫기버튼').setAttribute('R', 'width:w(7); height:w(7); margin:0 0 0 w(3);')
+              id('덮개프레임').setAttribute('R', 'width:w(100); height:h(100);')
+          }
+          resizeResponsiveElements()
       }
-      resizeResponsiveElements()
-  }
-  
-  id('경고문자').addEventListener("mouseover", function() {
-      id('경고풍선').style.display = 'block'
-  })
-  id('경고문자').addEventListener("mouseout", function() {
-      id('경고풍선').style.display = 'none'
-  })
-  
-  id('카카오').addEventListener("click", function() {
-      animation('카카오덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both')
-  })
-  id('카카오닫기').addEventListener("click", function() {
-      animation('카카오덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
-  })
-  id('토스').addEventListener("click", function() {
-      animation('토스덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both')
-  })
-  id('토스닫기').addEventListener("click", function() {
-      animation('토스덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
-  })
-  id('은행').addEventListener("click", function() {
-      animation('은행덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both')
-  })
-  id('은행닫기').addEventListener("click", function() {
-      animation('은행덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
-  })
-</script>
 
-<style>
-  .verticalShake {
-    animation: verticalShake 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-  }
-  @keyframes verticalShake {
-    0%, 100% {
-      transform: translateY(7.5%);
+      id('경고문자').addEventListener("mouseover", function() {
+          id('경고풍선').style.display = 'block'
+      })
+      id('경고문자').addEventListener("mouseout", function() {
+          id('경고풍선').style.display = 'none'
+      })
+
+      id('카카오').addEventListener("click", function() {
+          animation('카카오덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both')
+      })
+      id('카카오닫기').addEventListener("click", function() {
+          animation('카카오덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+      })
+      id('토스').addEventListener("click", function() {
+          animation('토스덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both')
+      })
+      id('토스닫기').addEventListener("click", function() {
+          animation('토스덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+      })
+      id('은행').addEventListener("click", function() {
+          animation('은행덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both')
+      })
+      id('은행닫기').addEventListener("click", function() {
+          animation('은행덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+      })
+    </script>
+  </body>
+  <footer>
+  </footer>
+  <style>
+    .verticalShake {
+      animation: verticalShake 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
     }
-    50%{
-      transform: translateY(-7.5%);
+    @keyframes verticalShake {
+      0%, 100% {
+        transform: translateY(7.5%);
+      }
+      50%{
+        transform: translateY(-7.5%);
+      }
     }
-  }
-  @keyframes scaleIn {
-    0% {
-      transform: scale(0);
-      opacity: 0.5;
-      border-radius:70%;
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0);
+        opacity: 0.5;
+        border-radius:70%;
+      }
+      100% {
+        transform: scale(1.7);
+        opacity: 1;
+        border-radius:70%;
+      }
     }
-    100% {
-      transform: scale(1.7);
-      opacity: 1;
-      border-radius:70%;
+    @font-face {
+      font-family: 'payboocBold';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
     }
-  }
-</style>
+  </style>
+</html>
