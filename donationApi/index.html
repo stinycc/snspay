@@ -1,8 +1,8 @@
 <div id='가로세로모드'>
-  <div id='이미지박스' style='max-width:375px; max-height:365px; z-index:3;'>
+  <div id='이미지박스' class='vertical' style='max-width:375px; max-height:365px; z-index:3;'>
     
   </div>
-  <div id='옵션박스' style='max-width:500px; max-height:435.5px; z-index:1;'>
+  <div id='옵션박스' class='vertical' style='max-width:500px; max-height:435.5px; z-index:1;'>
     
   </div>
   <div id="닫기버튼" style='max-height:65px; max-width:65px; border-radius:70%; background:white; color:dimgray; cursor:pointer;'>
@@ -15,20 +15,23 @@
 
 
 <script>
-  //가로모드 세로모드
-
-    if(window.innerWidth < window.innerHeight || window.innerHeight > 500){
-      document.getElementById('가로세로모드').className = 'vertical full noDrag'
-      document.getElementById('이미지박스').className = 'R [width:h(35); height:h(32.5); margin:0 0;] vertical'
-      document.getElementById('옵션박스').className = 'R [width:h(46.875); height:h(42.5); border-radius:h(2);] vertical'
-      document.getElementById('닫기버튼').className = 'R [width:h(7); height:h(7); margin:h(3) 0 0 0;] verticalShake'
-      document.getElementById('덮개프레임').className = 'R [width:h(100/16*10); height:h(100);]'
-    }else{
-      document.getElementById('가로세로모드').className = 'full noDrag'
-      document.getElementById('이미지박스').className = 'R [width:w(32); height:w(32); margin:0 0 0 w(3);] vertical'
-      document.getElementById('옵션박스').className = 'R [width:w(42.5); height:w(42.5*4/5); border-radius:w(2);] vertical'
-      document.getElementById('닫기버튼').className = 'R [width:w(7); height:w(7); margin:0 0 0 w(3);] verticalShake'
-      document.getElementById('덮개프레임').className = 'R [width:w(100); height:h(100);]'
-    }
-  //카트페이지 인 설정
+  f가로세로()
+  window.addEventListener("resize", function() {
+      f가로세로()
+  })
+  function f가로세로(){
+      if(window.innerWidth < window.innerHeight || window.innerHeight > 500){
+          id('가로세로모드').className = 'vertical full noDrag'
+          id('이미지박스').setAttribute('R', 'width:h(35); height:h(32.5); margin:0;')
+          id('옵션박스').setAttribute('R', 'width:h(46.875); height:h(42.5); border-radius:h(2);')
+          id('닫기버튼').setAttribute('R', 'width:h(7); height:h(7); margin:h(3) 0 0 0;')
+          id('덮개프레임').setAttribute('R', 'width:h(100/16*10); height:h(100);')
+      }else{
+          id('가로세로모드').className = 'full noDrag'
+          id('이미지박스').setAttribute('R', 'width:w(32); height:w(32); margin:0 0 0 w(3);')
+          id('옵션박스').setAttribute('R', 'width:w(42.5); height:w(42.5*4/5); border-radius:w(2);')
+          id('닫기버튼').setAttribute('R', 'width:w(7); height:w(7); margin:0 0 0 w(3);')
+          id('덮개프레임').setAttribute('R', 'width:w(100); height:h(100);')
+      }
+  }
 </script>
