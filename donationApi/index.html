@@ -88,7 +88,7 @@
       })
 
       id('카카오').addEventListener("click", function() {
-          animation('카카오덮개', 'scaleIn 1s cubic-bezier(0,1.07,.83,.67) both')
+          animation('카카오덮개', 'scaleIn 1s cubic-bezier(0,1,.5,.5) both')
           setTimeout(function(){
               elementFadeIn('카카오닫기')
               elementFadeIn('카카오박스')
@@ -98,7 +98,7 @@
           elementFadeOut('카카오닫기')
           elementFadeOut('카카오박스')
           setTimeout(function(){
-              animation('카카오덮개', 'scaleIn 1s cubic-bezier(0,1,.7,.7) reverse both')
+              animation('카카오덮개', 'scaleIn 1s cubic-bezier(0,1,.5,.5) reverse both')
           },500)
       })
       id('토스').addEventListener("click", function() {
