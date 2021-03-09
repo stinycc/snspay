@@ -93,7 +93,10 @@
           },750)
       })
       id('카카오닫기').addEventListener("click", function() {
-          animation('카카오덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+          elementFadeOut('카카오닫기')
+          setTimeout(function(){
+              animation('카카오덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+          },750)
       })
       id('토스').addEventListener("click", function() {
           animation('토스덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both')
@@ -102,7 +105,10 @@
           },750)
       })
       id('토스닫기').addEventListener("click", function() {
-          animation('토스덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+          elementFadeOut('토스닫기')
+          setTimeout(function(){
+              animation('토스덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+          },750)
       })
       id('은행').addEventListener("click", function() {
           animation('은행덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both')
@@ -111,7 +117,10 @@
           },750)
       })
       id('은행닫기').addEventListener("click", function() {
-          animation('은행덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+          elementFadeOut('은행닫기')
+          setTimeout(function(){
+              animation('은행덮개', 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) reverse both')
+          },750)
       })
     </script>
   </body>
