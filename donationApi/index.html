@@ -1,51 +1,22 @@
 <div id='가로세로모드'>
   <div id='이미지박스' style='max-width:375px; max-height:365px; z-index:3;'>
-    <div class='R [width:h(80); height:h(80); border-radius:70%;]' style='background: rgba(0, 0, 0, 0.5); overflow:hidden;'>
-      프로필 사진을<br />찾을 수 없습니다
-      <img class='full' id='프사' src='https://image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg?v=1561667497&w=1600&h=900' style='object-fit:cover; position:absolute;' />
-    </div>
-    <div class='R [height:h(9); width:w(1); margin-top:h(5);] vertical bottomCenterAlign' onmouseover="document.getElementById('경고풍선').style.display='block'" onmouseout="document.getElementById('경고풍선').style.display='none'" style='overflow:visible'>
-      <img class='R [height:h(95); width:h(155); margin-bottom:h(-4);]' style='object-fit:contain;' src='https://i.imgur.com/TZJelqk.png'/>
-      <span class='R [height:h(100); font-size:h(90); font-family:payboocBold;]' style='white-space:nowrap;'>고누리</span>
-      <img id='경고풍선' class='R [height:h(175); top:h(100)]' style='position:absolute; display:none; cursor:pointer;' src='https://i.imgur.com/INGEAXz.png'/>
-    </div>
+    
   </div>
   <div id='옵션박스' style='max-width:500px; max-height:435.5px; z-index:1;'>
-    <div class='R [height:h(5);]'></div>
-    <img id='카카오' class='R [width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);]' style='cursor:pointer;' src='https://i.imgur.com/FO5VjAI.png'/>
-    <img id='토스' class='R [width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);]' style='cursor:pointer;' src='https://i.imgur.com/U3KTT3z.png'/>
-    <img id='은행' class='R [width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);]' style='cursor:pointer;' src='https://i.imgur.com/lvCJSyd.png'/>
-    <div class='R [height:h(15); font-size:w(4.1);] bottomCenterAlign'>
-      <span class='fontCenter' style='cursor:pointer;' onclick='window.open("https://www.parahn.link", "_blank")'><a>Powered by</a> <b>Parahn.Link</b></span>
-    </div>
+    
   </div>
-  <div id="닫기버튼" class='R [border-radius:70%; max-height:65px; max-width:65px;]' style='background: white; color: dimgray; cursor:pointer;'>
-    <b class='R [font-size:w(45)]'>↓</b>
+  <div id="닫기버튼" style='max-height:65px; max-width:65px; border-radius:70%; background:white; color:dimgray; cursor:pointer;'>
+    
   </div>
 </div>
-<div style='position:absolute; z-index:2; pointer-events:none; overflow:hidden' id='덮개프레임'>
-  <div class='R [width:h(100); height:h(100); min-width:w(100); min-height:w(100);]' style='position:absolute; background:#facb00; transform:scale(0);' id='덮개'>
-  </div>
+<div id='덮개프레임' style='position:absolute; z-index:2; pointer-events:none; overflow:hidden'>
+  
 </div>
 
 
-<script>$(document).ready(function(){
-  document.getElementById('카카오').addEventListener('click',function(){
-    document.getElementById('덮개').style.animation = ''
-    void document.getElementById('덮개').offsetWidth;
-    document.getElementById('덮개').style.animation = 'scaleIn 1.5s cubic-bezier(.1,.58,.51,.49) both'
-  });
-  document.getElementById('토스').addEventListener('click',function(){
-    alert('토스클릭함')
-  });
-  document.getElementById('은행').addEventListener('click',function(){
-    alert('은행클릭함')
-  });
-})</script>
-
-<script>$(document).ready(function(){
+<script>
   //가로모드 세로모드
-  setInterval(function(){
+
     if(window.innerWidth < window.innerHeight || window.innerHeight > 500){
       document.getElementById('가로세로모드').className = 'vertical full noDrag'
       document.getElementById('이미지박스').className = 'R [width:h(35); height:h(32.5); margin:0 0;] vertical'
@@ -59,101 +30,5 @@
       document.getElementById('닫기버튼').className = 'R [width:w(7); height:w(7); margin:0 0 0 w(3);] verticalShake'
       document.getElementById('덮개프레임').className = 'R [width:w(100); height:h(100);]'
     }
-  },1)
   //카트페이지 인 설정
-  window.parent.postMessage(`
-  function f페이지인(){
-    document.getElementById('ParanDonationBackground').style.animation = '';
-    void document.getElementById('ParanDonationBackground').offsetWidth;
-    document.getElementById('ParanDonationBackground').style.animation = 'blurIn .5s cubic-bezier(.25,.46,.45,.94) both';
-    document.getElementById('ParanDonationButton').style.animation = '';
-    void document.getElementById('ParanDonationButton').offsetWidth;
-    document.getElementById('ParanDonationButton').style.animation = 'slideIn .5s cubic-bezier(.25,.46,.45,.94) reverse both';
-    document.getElementById('ParanDonationBackground').style.pointerEvents = 'auto';
-    setTimeout(function(){
-      document.getElementById('ParanDonationIframe').style.pointerEvents = 'auto';
-      document.getElementById('ParanDonationIframe').style.animation = '';
-      void document.getElementById('ParanDonationIframe').offsetWidth;
-      document.getElementById('ParanDonationIframe').style.animation = 'slideIn .5s cubic-bezier(.25,.46,.45,.94) both';
-    },500);
-  };
-  document.getElementById('ParanDonationButton').addEventListener('click',function(){f페이지인()});
-  `, '*');
-    
-    
-  //카트페이지 아웃 설정
-  function f페이지아웃(){
-    window.parent.postMessage(`
-                               document.getElementById('ParanDonationIframe').style.pointerEvents = 'none'
-                               document.getElementById('ParanDonationIframe').style.animation = ''
-                               void document.getElementById('ParanDonationIframe').offsetWidth;
-                               document.getElementById('ParanDonationIframe').style.animation = 'slideIn .5s cubic-bezier(.25,.46,.45,.94) reverse both'`, '*');
-    setTimeout(function(){
-      window.parent.postMessage(`document.getElementById('ParanDonationBackground').style.animation = ''
-                                 void document.getElementById('ParanDonationBackground').offsetWidth;
-                                 document.getElementById('ParanDonationBackground').style.animation = 'blurIn .5s cubic-bezier(.25,.46,.45,.94) reverse both'`, '*');
-      window.parent.postMessage(`document.getElementById('ParanDonationButton').style.animation = ''
-                                 void document.getElementById('ParanDonationButton').offsetWidth;
-                                 document.getElementById('ParanDonationButton').style.animation = 'slideIn .5s cubic-bezier(.25,.46,.45,.94) both'`, '*');
-      window.parent.postMessage(`document.getElementById('ParanDonationBackground').style.pointerEvents = 'none'`, '*');
-    },500)
-  }
-  document.getElementById('닫기버튼').addEventListener('click',function(){f페이지아웃()})
-    
-    
-  //CSS세팅하기
-  window.parent.postMessage(`document.getElementById('ParanDonationBackground').style.display='';document.getElementById('ParanDonationButton').innerHTML +='<style>#ParanDonationIframe{position:fixed; width:100%; height:100%; bottom:0px; left:0px; z-index:9999; border:none; transform:translateY(100%);}#ParanDonationBackground{position:fixed; width:100%; height:100%; bottom:0px; left:0px; z-index:9998; border:none; pointer-events:none; overflow:hidden;}#ParanDonationButton{display:flex; justify-content:center; align-items:center; position:absolute; bottom:25px; right:25px; z-index:9997; width:7.75vh; height:7.75vh; min-width:50px; min-height:50px; max-width:80px; max-height:80px; background:rgba(250,250,230,0.9); border-radius:70%; overflow:hidden; pointer-events:auto; cursor:pointer;}#PLButtonImg{animation:DonationAnimation 3s infinite both; width:70%; height:70%;}@keyframes DonationAnimation{0%,100%{transform:translateY(-6%) rotate(6deg)}50%{transform:translateY(6%) rotate(-6deg)}}@keyframes slideIn{0%{transform:translateY(100vh); opacity:0}100%{transform:translateY(0px); opacity:1}}@keyframes blurIn{0%{backdrop-filter:blur(0px); -webkit-backdrop-filter:blur(0px); background:rgba(0,0,0,0);}100%{backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px); background:rgba(115,115,115,0.5);}}</style>'`, '*');
-})</script>
-
-<style>
-select, input {
-  font-family: inherit; 
-  background: whitesmoke;
-  border: 1px solid gainsboro;
-  border-radius: 5px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.noDrag {
-  -ms-user-select:none; 
-  -moz-user-select:-moz-none; 
-  -webkit-user-select:none; 
-  -khtml-user-select:none; 
-  user-select:none;
-}
-.textOverflowHidden{
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
-.verticalShake {
-  animation: verticalShake 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-}
-@keyframes verticalShake {
-  0%, 100% {
-    transform: translateY(7.5%);
-  }
-  50%{
-    transform: translateY(-7.5%);
-  }
-}
-@keyframes scaleIn {
-  5% {
-    transform: scale(0);
-    opacity: 0.5;
-    border-radius:70%;
-  }
-  100% {
-    transform: scale(1.7);
-    opacity: 1;
-    border-radius:70%;
-  }
-}
-@font-face {
-    font-family: 'payboocBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-</style>
+</script>
