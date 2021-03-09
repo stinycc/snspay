@@ -116,7 +116,7 @@
           },500)
       })
       id('은행').addEventListener("click", function() {
-          animation('은행덮개', 'scaleIn 1s cubic-bezier(.1,.58,.51,.49) both')
+          animation('은행덮개', 'scaleIn 1s cubic-bezier(0,1,.2,.5) both')
           setTimeout(function(){
               elementFadeIn('은행닫기')
               elementFadeIn('은행박스')
@@ -126,7 +126,7 @@
           elementFadeOut('은행닫기')
           elementFadeOut('은행박스')
           setTimeout(function(){
-              animation('은행덮개', 'scaleIn 1s cubic-bezier(.1,.58,.51,.49) reverse both')
+              animation('은행덮개', 'scaleIn 1s cubic-bezier(0,1,.2,.5) reverse both')
           },500)
       })
     </script>
