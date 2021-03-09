@@ -5,7 +5,7 @@
   <div id='옵션박스' class='vertical' style='max-width:500px; max-height:435.5px; z-index:1;'>
     
   </div>
-  <div id="닫기버튼" style='max-height:65px; max-width:65px; border-radius:70%; background:white; color:dimgray; cursor:pointer;'>
+  <div id="닫기버튼" class='verticalShake' style='max-height:65px; max-width:65px; border-radius:70%; background:white; color:dimgray; cursor:pointer;'>
     
   </div>
 </div>
@@ -36,3 +36,17 @@
       resizeResponsiveElements()
   }
 </script>
+
+<style>
+  .verticalShake {
+    animation: verticalShake 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+  }
+  @keyframes verticalShake {
+    0%, 100% {
+      transform: translateY(7.5%);
+    }
+    50%{
+      transform: translateY(-7.5%);
+    }
+  }
+</style>
