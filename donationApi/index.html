@@ -42,8 +42,10 @@
           </div>
         </div>
       </div>
-      <div id="닫기버튼" class='verticalShake' style='z-index:3; max-height:65px; max-width:65px; border-radius:70%; background:white; color:dimgray; cursor:pointer;'>
-        <b R='font-size:w(45);'>↓</b>
+      <div id='버튼박스' style='max-height:65px; max-width:65px; background:white; color:dimgray; cursor:pointer;'>
+        <div id="닫기버튼" class='verticalShake' style='z-index:3; border-radius:70%;'>
+          <b R='font-size:w(45);'>↓</b>
+        </div>
       </div>
     </div>
     <div id='카카오닫기' style='display:none;'></div>
@@ -59,13 +61,13 @@
               id('가로세로모드').className = 'vertical full noDrag'
               id('이미지박스').setAttribute('R', 'width:h(35); height:h(32.5); margin:0;')
               id('옵션박스').setAttribute('R', 'width:h(46.875); height:h(42.5); border-radius:h(2);')
-              id('닫기버튼').setAttribute('R', 'width:h(7); height:h(7); margin:h(3) 0 0 0;')
+              id('버튼박스').setAttribute('R', 'width:h(7); height:h(7); margin:h(3) 0 0 0;')
               id('덮개프레임').setAttribute('R', 'width:h(100/16*10); height:h(100);')
           }else{
               id('가로세로모드').className = 'full noDrag'
               id('이미지박스').setAttribute('R', 'width:w(32); height:w(32); margin:0 0 0 w(3);')
               id('옵션박스').setAttribute('R', 'width:w(42.5); height:w(42.5*4/5); border-radius:w(2);')
-              id('닫기버튼').setAttribute('R', 'width:w(7); height:w(7); margin:0 0 0 w(3);')
+              id('버튼박스').setAttribute('R', 'width:w(7); height:w(7); margin:0 0 0 w(3);')
               id('덮개프레임').setAttribute('R', 'width:w(100); height:h(100);')
           }
           resizeResponsiveElements()
