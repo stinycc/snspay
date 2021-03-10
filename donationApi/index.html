@@ -81,6 +81,9 @@
       if(getParameter('1')){
           var bank1 = getParameter('1').split('.')
           id('은행1').src = '/resources/images/bank/' + bank1[0] + '.png'
+          id('은행1').addEventListener('click', function() {
+              alert(bank1[1])
+          })
       }
       if(getParameter('2')){
           var bank2 = getParameter('2').split('.')
