@@ -70,7 +70,10 @@
     </div>
     <script>
       if(getParameter('nick')){
-          document.getElementsByName('닉네임').innerHTML = getParameter('nick')
+          var nickName = document.getElementsByName('닉네임')
+          for (i = 0; i < nickName.length; i++) {
+              nickName[i].innerHTML = getParameter('nick')
+          }
       }
       if(getParameter('pic')){
           id('프사').innerHTML = getParameter('pic')
