@@ -41,12 +41,12 @@
         <div id='카카오박스' style='display:none; position:absolute; z-index:3;'>
           <div class='bottomCenterAlign' R='height:h(100/8);'><b name='닉네임' R='font-size:h(45);'>[알수없음]</b><a R='font-size:h(40);'>님께</a></div>
           <div class='bottomCenterAlign' R='height:h(100/8);'><b name='송금액' R='font-size:h(45);'>[송금인이 직접 설정]</b><a R='font-size:h(40);'>원을</a></div>
-          <div class='bottomCenterAlign' R='height:h(100/7);'><b class='button' R='font-size:h(50);' style='text-decoration:underline;'>카카오 송금합니다.</b></div>
+          <div class='bottomCenterAlign' R='height:h(100/7);'><b id='카카오이동' class='button' R='font-size:h(50);' style='text-decoration:underline;'>카카오 송금합니다.</b></div>
         </div>
         <div id='토스박스' style='display:none; position:absolute; z-index:3;'>
           <div class='bottomCenterAlign' R='height:h(100/8);'><b name='닉네임' R='font-size:h(45);'>[알수없음]</b><a R='font-size:h(40);'>님께</a></div>
           <div class='bottomCenterAlign' R='height:h(100/8);'><b name='송금액' R='font-size:h(45);'>[송금인이 직접 설정]</b><a R='font-size:h(40);'>원을</a></div>
-          <div class='bottomCenterAlign' R='height:h(100/7);'><b class='button' R='font-size:h(50);' style='text-decoration:underline;'>토스 송금합니다.</b></div>
+          <div class='bottomCenterAlign' R='height:h(100/7);'><b id='토스이동' class='button' R='font-size:h(50);' style='text-decoration:underline;'>토스 송금합니다.</b></div>
         </div>
         <div id='은행박스' style='display:none; position:absolute; z-index:3;'>
           <div R='height:h(40);'>
@@ -78,8 +78,16 @@
       if(getParameter('pic')){
           id('프사').src = getParameter('pic')
       }
+      if(getParameter('kaka')){
+          id('카카오이동').addEventListener('click', function() {
+              location.href = 'intent://kakaopay/money/to/qr?qr_code=' + getParameter('kaka') + 'EEDO#Intent;scheme=kakaotalk;package=com.kakao.talk;end'
+          })
+      }
       if(getParameter('1')){
           var bank1 = getParameter('1').split('.')
+          id('토스이동').addEventListener('click', function() {
+              location.href = 'intent://send?title=송금&bankCode=' + bank1[0] + '&accountNo=' + bank1[1] + '#Intent;scheme=supertoss;package=viva.republica.toss;end'
+          })
           id('은행1').src = '/resources/images/bank/' + bank1[0] + '.png'
           id('은행1').addEventListener('click', function() {
               alert(bank1[1])
