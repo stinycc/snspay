@@ -39,13 +39,13 @@
           </div>
         </div>
         <div id='카카오박스' style='display:none; position:absolute; z-index:3;'>
-          <div name='닉네임' class='bottomCenterAlign' R='height:h(100/8);'><b R='font-size:h(45);'>[알수없음]</b><a R='font-size:h(40);'>님께</a></div>
-          <div name='송금액' class='bottomCenterAlign' R='height:h(100/8);'><b R='font-size:h(45);'>[송금인이 직접 설정]</b><a R='font-size:h(40);'>원을</a></div>
+          <div class='bottomCenterAlign' R='height:h(100/8);'><b name='닉네임' R='font-size:h(45);'>[알수없음]</b><a R='font-size:h(40);'>님께</a></div>
+          <div class='bottomCenterAlign' R='height:h(100/8);'><b name='송금액' R='font-size:h(45);'>[송금인이 직접 설정]</b><a R='font-size:h(40);'>원을</a></div>
           <div class='bottomCenterAlign' R='height:h(100/7);'><b class='button' R='font-size:h(50);' style='text-decoration:underline;'>카카오 송금합니다.</b></div>
         </div>
         <div id='토스박스' style='display:none; position:absolute; z-index:3;'>
-          <div name='닉네임' class='bottomCenterAlign' R='height:h(100/8);'><b R='font-size:h(45);'>[알수없음]</b><a R='font-size:h(40);'>님께</a></div>
-          <div name='송금액' class='bottomCenterAlign' R='height:h(100/8);'><b R='font-size:h(45);'>[송금인이 직접 설정]</b><a R='font-size:h(40);'>원을</a></div>
+          <div class='bottomCenterAlign' R='height:h(100/8);'><b name='닉네임' R='font-size:h(45);'>[알수없음]</b><a R='font-size:h(40);'>님께</a></div>
+          <div class='bottomCenterAlign' R='height:h(100/8);'><b name='송금액' R='font-size:h(45);'>[송금인이 직접 설정]</b><a R='font-size:h(40);'>원을</a></div>
           <div class='bottomCenterAlign' R='height:h(100/7);'><b class='button' R='font-size:h(50);' style='text-decoration:underline;'>토스 송금합니다.</b></div>
         </div>
         <div id='은행박스' style='display:none; position:absolute; z-index:3;'>
@@ -76,16 +76,20 @@
           id('프사').innerHTML = getParameter('pic')
       }
       if(getParameter('1')){
-          id('은행1').src = '/resources/images/bank/' + getParameter('1') + '.png'
+          var bank1 = getParameter('1').split('.')
+          id('은행1').src = '/resources/images/bank/' + bank1[0] + '.png'
       }
       if(getParameter('2')){
-          id('은행2').src = '/resources/images/bank/' + getParameter('2') + '.png'
+          var bank2 = getParameter('2').split('.')
+          id('은행2').src = '/resources/images/bank/' + bank2[0] + '.png'
       }
       if(getParameter('3')){
-          id('은행3').src = '/resources/images/bank/' + getParameter('3') + '.png'
+          var bank3 = getParameter('3').split('.')
+          id('은행3').src = '/resources/images/bank/' + bank3[0] + '.png'
       }
       if(getParameter('4')){
-          id('은행4').src = '/resources/images/bank/' + getParameter('4') + '.png'
+          var bank4 = getParameter('4').split('.')
+          id('은행4').src = '/resources/images/bank/' + bank4[0] + '.png'
       }
       f가로세로()
       window.addEventListener("resize", function() {
