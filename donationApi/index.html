@@ -50,12 +50,12 @@
         </div>
         <div id='은행박스' style='display:none; position:absolute; z-index:3;'>
           <div R='height:h(40);'>
-            <img id='은행1' class='button' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
-            <img id='은행2' class='button' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
+            <img id='은행1' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
+            <img id='은행2' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
           </div>
           <div R='height:h(40);'>
-            <img id='은행3' class='button' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
-            <img id='은행4' class='button' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
+            <img id='은행3' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
+            <img id='은행4' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
           </div>
         </div>
       </div>
@@ -93,18 +93,22 @@
           id('은행1').addEventListener('click', function() {
               alert(bank1[1])
           })
+          id('은행1').className = 'button'
       }
       if(getParameter('2')){
           var bank2 = getParameter('2').split('.')
           id('은행2').src = '/resources/images/bank/' + bank2[0] + '.png'
+          id('은행2').className = 'button'
       }
       if(getParameter('3')){
           var bank3 = getParameter('3').split('.')
           id('은행3').src = '/resources/images/bank/' + bank3[0] + '.png'
+          id('은행3').className = 'button'
       }
       if(getParameter('4')){
           var bank4 = getParameter('4').split('.')
           id('은행4').src = '/resources/images/bank/' + bank4[0] + '.png'
+          id('은행4').className = 'button'
       }
       f가로세로()
       window.addEventListener("resize", function() {
