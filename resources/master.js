@@ -90,6 +90,10 @@ function pickRandom(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
+function mobileCheck() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 //For browsers that doesn't support replaceAll function
 String.prototype.replaceAll = function replaceAlltext(search, replace) { return this.split(search).join(replace); }
 
