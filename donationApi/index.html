@@ -216,28 +216,23 @@
           resizeResponsiveElements()
       }
       
+      touchscreen = false
       window.addEventListener("touchstart", function() {
           touchscreen = true
       })
       id('경고문자').addEventListener("mouseover", function() {
           id('상태풍선').style.display = 'block'
           if(touchscreen){
-              setTimeout(function(){
+              window.addEventListener("touchend", function() {
                   id('상태풍선').style.pointerEvents = 'auto'
-              },500)
+              })
           } else {
               id('상태풍선').style.pointerEvents = 'auto'
           }
       })
       id('경고문자').addEventListener("mouseout", function() {
           id('상태풍선').style.display = 'none'
-          if(touchscreen){
-              setTimeout(function(){
-                  id('상태풍선').style.pointerEvents = 'none'
-              },500)
-          } else {
-              id('상태풍선').style.pointerEvents = 'none'
-          }
+          id('상태풍선').style.pointerEvents = 'none'
       })
 
       id('카카오').addEventListener("click", function() {
