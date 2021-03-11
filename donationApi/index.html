@@ -251,6 +251,9 @@
           elementFadeOut('은행박스')
           animation('은행덮개', 'scaleIn 1s cubic-bezier(.1,.7,.5,.5) reverse both')
       })
+      id('닫기버튼').addEventListener('click',function(){
+          window.parent.postMessage('pageOut()', '*');
+      })
     </script>
   </body>
   <footer>
