@@ -98,7 +98,7 @@
       
       if(getParameter('ka')){
           id('카카오이동').addEventListener('click', function() {
-              location.href = 'intent://kakaopay/money/to/qr?qr_code=' + getParameter('ka') + 금액.toString(16) + 'Eedo#Intent;scheme=kakaotalk;package=com.kakao.talk;end'
+              location.href = 'intent://kakaopay/money/to/qr?qr_code=' + getParameter('ka') + (금액*8).toString(16) + 'Eedo#Intent;scheme=kakaotalk;package=com.kakao.talk;end'
           })
       } else {
           id('카카오이동').addEventListener('click', function() {
