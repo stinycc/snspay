@@ -11,6 +11,7 @@
   <body style='overflow:hidden;'>
     <link href='/resources/master.css' rel='stylesheet' type='text/css'>
     <script src='/resources/master.js'></script>
+    <input id='복사용' type='text' R='z-index:-5; font-size:0.001px; padding:0; margin:0;' style='position:absolute; opacity:0;'>
     <div id='덮개프레임' style='position:absolute; z-index:2; pointer-events:none; overflow:hidden'>
       <div id='카카오덮개' R='width:h(100); height:h(100); min-width:w(100); min-height:w(100);' style='position:absolute; background:#facb00; transform:scale(0); pointer-events:auto;'></div>
       <div id='토스덮개' R='width:h(100); height:h(100); min-width:w(100); min-height:w(100);' style='position:absolute; background:#176ABD; transform:scale(0); pointer-events:auto;'></div>
@@ -87,14 +88,20 @@
       var bankName = {'002':'산업', '003':'기업', '004':'국민', '007':'수협', '011':'농협', '020':'우리', '023':'제일', '027':'씨티', '031':'대구', '032':'부산', '034':'광주', '035':'제주', '037':'전북', '039':'경남', '045':'새마을', '048':'신협', '050':'저축은행', '054':'HSBC', '055':'도이치', '057':'JP모간', '060':'BOA', '061':'BNP파리바', '062':'중국공상', '064':'산림조합', '067':'중국건설', '071':'우체국', '081':'하나', '088':'신한', '089':'케이뱅크', '090':'카카오뱅크'}
       if(getParameter('1')){
           var bank1 = getParameter('1').split('.')
+          
           id('토스이동').addEventListener('click', function() {
               location.href = 'intent://send?title=송금&bankCode=' + bank1[0] + '&accountNo=' + bank1[1] + '#Intent;scheme=supertoss;package=viva.republica.toss;end'
           })
+        
           id('은행1').src = '/resources/images/bank/' + bank1[0] + '.png'
-          id('은행1').addEventListener('click', function() {
-              alert(bankName[bank1[0]] + ': ' + bank1[1] + ' (계좌주명: ' + bank1[2] + ')')
-          })
           id('은행1').className = 'button'
+          id('은행1').addEventListener('click', function() {
+              id('복사용').value = bankName[bank1[0]] + ": " + bank1[1] + " (계좌주명: " + bank1[2] + ")"
+              id('복사용').select()
+              document.execCommand("copy");
+              id('복사용').blur()
+              alert("'" + bankName[bank1[0]] + ": " + bank1[1] + " (계좌주명: " + bank1[2] + ")'이 복사되었습니다.")
+          })
       }
       if(getParameter('2')){
           var bank2 = getParameter('2').split('.')
