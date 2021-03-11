@@ -1,0 +1,23 @@
+<form enctype="multipart/form-data" action="https://api.qrserver.com/v1/read-qr-code/" method="POST">
+<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+Choose QR code image to read/scan: <input id='testt' name="file" type="file" />
+<input type="submit" value="Read QR code" />
+</form>
+
+<script>
+photo = document.getElementById('testt').files[0];  // file from input
+req = new XMLHttpRequest();
+formData = new FormData();
+
+req.onreadystatechange = function() {
+    if (this.readyState == 4) {
+        alert(this.responseText)
+    }
+    if (this.status == 404) {
+        alert('실패')
+    }
+};
+formData.append("image", photo);                                
+req.open("POST", 'https://api.qrserver.com/v1/read-qr-code/');
+req.send(formData);
+</script>
