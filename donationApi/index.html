@@ -26,7 +26,7 @@
         <div id='경고문자' class='vertical bottomCenterAlign' R='height:h(9); width:w(1); margin-top:h(5);' style='overflow:visible'>
           <img id='상태표시' R='height:h(95); width:h(155); margin-bottom:h(-4);' style='object-fit:contain;'>
           <span name='닉네임' R='height:h(100); font-size:h(90); font-family:payboocBold;' style='white-space:nowrap;'>[알수없음]</span>
-          <img id='상태풍선' style='position:absolute; display:none; cursor:pointer;'>
+          <img id='상태풍선' style='position:absolute; display:none; cursor:pointer; pointer-events:none;'>
         </div>
       </div>
       <div id='옵션박스' class='vertical' style='max-width:500px; max-height:435.5px;'>
@@ -218,9 +218,15 @@
 
       id('경고문자').addEventListener("mouseover", function() {
           id('상태풍선').style.display = 'block'
+          setTimeout(function(){
+              id('상태풍선').style.pointerEvents = 'auto'
+          },500)
       })
       id('경고문자').addEventListener("mouseout", function() {
           id('상태풍선').style.display = 'none'
+          setTimeout(function(){
+              id('상태풍선').style.pointerEvents = 'none'
+          },500)
       })
 
       id('카카오').addEventListener("click", function() {
