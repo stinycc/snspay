@@ -21,7 +21,7 @@
       <div id='이미지박스' class='vertical' style='z-index:3; max-width:375px; max-height:365px;'>
         <div R='width:h(80); height:h(80); border-radius:70%;' style='background:rgba(0, 0, 0, 0.5); overflow:hidden;'>
           프로필 사진을<br />찾을 수 없습니다
-          <img id='프사' src='//image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg' class='full' style='object-fit:cover; position:absolute;'>
+          <img id='프사' class='full' style='object-fit:cover; position:absolute;'>
         </div>
         <div id='경고문자' class='vertical bottomCenterAlign' R='height:h(9); width:w(1); margin-top:h(5);' style='overflow:visible'>
           <img id='상태표시' src='/resources/images/warning.svg' R='height:h(95); width:h(155); margin-bottom:h(-4);' style='object-fit:contain;'>
@@ -76,15 +76,23 @@
               nickName[i].innerHTML = getParameter('nick')
           }
       }
+      
       if(getParameter('pic')){
           id('프사').src = getParameter('pic')
+      } else {
+          id('프사').src = '//image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg'
       }
+        
       if(getParameter('ka')){
           id('카카오이동').addEventListener('click', function() {
-              //location.href = 'intent://kakaopay/money/to/qr?qr_code=2810060111494585710033061f40ssaa#Intent;scheme=kakaotalk;package=com.kakao.talk;end'
               location.href = 'intent://kakaopay/money/to/qr?qr_code=' + getParameter('ka') + 'EEDO#Intent;scheme=kakaotalk;package=com.kakao.talk;end'
           })
+      } else {
+          id('카카오이동').addEventListener('click', function() {
+              alert('😢 수신인이 카카오 송금을 사용하지 않도록 설정했습니다. 토스 송금이나 은행 계좌번호를 이용해주세요.')
+          })
       }
+      
       var bankName = {'002':'산업', '003':'기업', '004':'국민', '007':'수협', '011':'농협', '020':'우리', '023':'제일', '027':'씨티', '031':'대구', '032':'부산', '034':'광주', '035':'제주', '037':'전북', '039':'경남', '045':'새마을', '048':'신협', '050':'저축은행', '054':'HSBC', '055':'도이치', '057':'JP모간', '060':'BOA', '061':'BNP파리바', '062':'중국공상', '064':'산림조합', '067':'중국건설', '071':'우체국', '081':'하나', '088':'신한', '089':'케이뱅크', '090':'카카오뱅크'}
       if(getParameter('1')){
           var bank1 = getParameter('1').split('.')
