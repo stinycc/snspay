@@ -215,10 +215,13 @@
           }
           resizeResponsiveElements()
       }
-
+      
+      window.addEventListener("touchstart", function() {
+          touchscreen = true
+      })
       id('경고문자').addEventListener("mouseover", function() {
           id('상태풍선').style.display = 'block'
-          if(mobileCheck()){
+          if(touchscreen){
               setTimeout(function(){
                   id('상태풍선').style.pointerEvents = 'auto'
               },500)
@@ -228,7 +231,7 @@
       })
       id('경고문자').addEventListener("mouseout", function() {
           id('상태풍선').style.display = 'none'
-          if(mobileCheck()){
+          if(touchscreen){
               setTimeout(function(){
                   id('상태풍선').style.pointerEvents = 'none'
               },500)
