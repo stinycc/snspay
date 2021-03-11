@@ -232,7 +232,13 @@
       })
       id('경고문자').addEventListener("mouseout", function() {
           id('상태풍선').style.display = 'none'
-          id('상태풍선').style.pointerEvents = 'none'
+          if(touchscreen){
+              setTimeout(function(){
+                  id('상태풍선').style.pointerEvents = 'none'
+              },1000)
+          } else {
+              id('상태풍선').style.pointerEvents = 'none'
+          }
       })
 
       id('카카오').addEventListener("click", function() {
