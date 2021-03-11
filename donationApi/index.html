@@ -77,6 +77,10 @@
           }
       }
       
+      if(getParameter('approved') == 'true'){
+          id('상태표시').src = '/resources/images/approved.svg'
+      }
+      
       if(getParameter('pic')){
           id('프사').src = getParameter('pic')
       } else {
