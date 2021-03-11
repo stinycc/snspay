@@ -85,7 +85,7 @@
       
       if(getParameter('amou')){
           금액 = parseInt(getParameter('amou'))
-          var amount = document.getElementsByName('')
+          var amount = document.getElementsByName('송금액')
           for (i = 0; i < amount.length; i++) {
               amount[i].innerHTML = numberWithCommas(금액)
           }
