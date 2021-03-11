@@ -107,16 +107,37 @@
           var bank2 = getParameter('2').split('.')
           id('은행2').src = '/resources/images/bank/' + bank2[0] + '.png'
           id('은행2').className = 'button'
+          id('은행2').addEventListener('click', function() {
+              id('복사용').value = bankName[bank2[0]] + ": " + bank2[1] + " (계좌주명: " + bank2[2] + ")"
+              id('복사용').select()
+              document.execCommand("copy");
+              id('복사용').blur()
+              alert("'" + bankName[bank2[0]] + ": " + bank2[1] + " (계좌주명: " + bank2[2] + ")'이 복사되었습니다.")
+          })
       }
       if(getParameter('3')){
           var bank3 = getParameter('3').split('.')
           id('은행3').src = '/resources/images/bank/' + bank3[0] + '.png'
           id('은행3').className = 'button'
+          id('은행3').addEventListener('click', function() {
+              id('복사용').value = bankName[bank3[0]] + ": " + bank3[1] + " (계좌주명: " + bank3[2] + ")"
+              id('복사용').select()
+              document.execCommand("copy");
+              id('복사용').blur()
+              alert("'" + bankName[bank3[0]] + ": " + bank3[1] + " (계좌주명: " + bank3[2] + ")'이 복사되었습니다.")
+          })
       }
       if(getParameter('4')){
           var bank4 = getParameter('4').split('.')
           id('은행4').src = '/resources/images/bank/' + bank4[0] + '.png'
           id('은행4').className = 'button'
+          id('은행4').addEventListener('click', function() {
+              id('복사용').value = bankName[bank4[0]] + ": " + bank4[1] + " (계좌주명: " + bank4[2] + ")"
+              id('복사용').select()
+              document.execCommand("copy");
+              id('복사용').blur()
+              alert("'" + bankName[bank4[0]] + ": " + bank4[1] + " (계좌주명: " + bank4[2] + ")'이 복사되었습니다.")
+          })
       }
       f가로세로()
       window.addEventListener("resize", function() {
