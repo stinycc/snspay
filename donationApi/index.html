@@ -218,15 +218,23 @@
 
       id('경고문자').addEventListener("mouseover", function() {
           id('상태풍선').style.display = 'block'
-          setTimeout(function(){
+          if(mobileCheck()){
+              setTimeout(function(){
+                  id('상태풍선').style.pointerEvents = 'auto'
+              },500)
+          } else {
               id('상태풍선').style.pointerEvents = 'auto'
-          },500)
+          }
       })
       id('경고문자').addEventListener("mouseout", function() {
           id('상태풍선').style.display = 'none'
-          setTimeout(function(){
+          if(mobileCheck()){
+              setTimeout(function(){
+                  id('상태풍선').style.pointerEvents = 'none'
+              },500)
+          } else {
               id('상태풍선').style.pointerEvents = 'none'
-          },500)
+          }
       })
 
       id('카카오').addEventListener("click", function() {
