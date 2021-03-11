@@ -223,9 +223,9 @@
       id('경고문자').addEventListener("mouseover", function() {
           id('상태풍선').style.display = 'block'
           if(touchscreen){
-              window.addEventListener("touchend", function() {
+              setTimeout(function(){
                   id('상태풍선').style.pointerEvents = 'auto'
-              })
+              },500)
           } else {
               id('상태풍선').style.pointerEvents = 'auto'
           }
