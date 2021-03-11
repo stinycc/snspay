@@ -1,0 +1,83 @@
+#ParanDonationIframe {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    left: 0px;
+    z-index: 9999;
+    border: none;
+    transform: translateY(100%);
+}
+
+#ParanDonationBackground {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    left: 0px;
+    z-index: 9998;
+    border: none;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#ParanDonationButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9997;
+    width: 7.75vh;
+    height: 7.75vh;
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 80px;
+    max-height: 80px;
+    background: rgba(250, 250, 230, 0.9);
+    border-radius: 70%;
+    overflow: hidden;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#PLButtonImg {
+    animation: DonationAnimation 3s infinite both;
+    width: 70%;
+    height: 70%;
+}
+
+@keyframes DonationAnimation {
+    0%,
+    100% {
+        transform: translateY(-6%) rotate(6deg)
+    }
+    50% {
+        transform: translateY(6%) rotate(-6deg)
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1
+    }
+}
+
+@keyframes blurIn {
+    0% {
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        background: rgba(0, 0, 0, 0);
+    }
+    100% {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        background: rgba(115, 115, 115, 0.5);
+    }
+}
