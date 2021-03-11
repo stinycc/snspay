@@ -83,8 +83,8 @@
           id('프사').src = '//image.cnbcfm.com/api/v1/image/105992231-1561667465295gettyimages-521697453.jpeg'
       }
       
-      if(getParameter('amou')){
-          금액 = parseInt(getParameter('amou'))
+      if(sessionStorage.getItem('amount')){
+          금액 = parseInt(sessionStorage.getItem('amount'))
           var amount = document.getElementsByName('송금액')
           for (i = 0; i < amount.length; i++) {
               amount[i].innerHTML = numberWithCommas(금액)
