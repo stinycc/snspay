@@ -99,8 +99,9 @@
       }
       
       if(getParameter('ka')){
+          아이디 = '0' *(15 - parseInt(getParameter('ka'), 32).length) + parseInt(getParameter('ka'), 32).toString()
           id('카카오이동').addEventListener('click', function() {
-              location.href = 'intent://kakaopay/money/to/qr?qr_code=281006011' + parseInt(getParameter('ka'), 32) + (금액*8).toString(16) + 'Eedo#Intent;scheme=kakaotalk;package=com.kakao.talk;end'
+              location.href = 'intent://kakaopay/money/to/qr?qr_code=281006011' + 아이디 + (금액*8).toString(16) + 'Eedo#Intent;scheme=kakaotalk;package=com.kakao.talk;end'
           })
       } else {
           id('카카오이동').addEventListener('click', function() {
