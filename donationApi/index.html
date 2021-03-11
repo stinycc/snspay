@@ -102,11 +102,11 @@
       }
       
       if(getParameter('ka')){
-          if(mobileCheck() == false){
-              alert('현재 PC에서 접속하신 것으로 확인되고 있습니다. 모바일 버전이 아닌경우 정상 작동하지 않을 수 있습니다.')
-          }
           var 아이디 = '0'.repeat(15 - String(parseInt(getParameter('ka'), 32)).length) + String(parseInt(getParameter('ka'), 32))
           id('카카오이동').addEventListener('click', function() {
+              if(mobileCheck() == false){
+                  alert('현재 PC에서 접속하신 것으로 확인되고 있습니다. 모바일 버전이 아닌경우 정상 작동하지 않을 수 있습니다.')
+              }
               location.href = 'intent://kakaopay/money/to/qr?qr_code=281006011' + 아이디 + (금액*8).toString(16) + 'Eedo#Intent;scheme=kakaotalk;package=com.kakao.talk;end'
           })
       } else {
