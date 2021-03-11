@@ -85,7 +85,6 @@
       
       if(getParameter('amou')){
           금액 = parseInt(getParameter('amou'))
-          복사용금액 = numberWithCommas(금액) + '원/'
           var amount = document.getElementsByName('송금액')
           for (i = 0; i < amount.length; i++) {
               amount[i].innerHTML = numberWithCommas(금액)
@@ -95,7 +94,11 @@
           }
       } else {
           금액 = 0
+      }
+      if (금액 == 0){
           복사용금액 = ''
+      } else {
+          복사용금액 = numberWithCommas(금액) + '원/'
       }
       
       if(getParameter('ka')){
