@@ -70,10 +70,10 @@
       </div>
     </div>
     <script>
-      if(getParameter('nick')){
+      if(getParameter('nic')){
           var nickName = document.getElementsByName('닉네임')
           for (i = 0; i < nickName.length; i++) {
-              nickName[i].innerHTML = getParameter('nick')
+              nickName[i].innerHTML = getParameter('nic')
           }
       }
       
@@ -115,8 +115,8 @@
           복사용금액 = numberWithCommas(금액) + '원/'
       }
       
-      if(getParameter('ka')){
-          var 아이디 = '0'.repeat(15 - String(parseInt(getParameter('ka'), 32)).length) + String(parseInt(getParameter('ka'), 32))
+      if(getParameter('kak')){
+          var 아이디 = '0'.repeat(15 - String(parseInt(getParameter('kak'), 32)).length) + String(parseInt(getParameter('kak'), 32))
           id('카카오이동').addEventListener('click', function() {
               if(mobileCheck() == false){
                   alert('현재 PC에서 접속하신 것으로 확인되고 있습니다. 모바일 버전이 아닌경우 정상 작동하지 않을 수 있습니다.')
