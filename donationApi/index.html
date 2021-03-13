@@ -77,17 +77,17 @@
           }
       }
       
-      if(getParameter('app')){
-          상태 = 'approved'
-          id('상태표시').src = '/resources/images/approved.svg'
-          id('상태풍선').addEventListener('click', function() {
-              window.open(decodeURIComponent(getParameter('approved')))
-          })
-      } else {
+      if(getParameter('app') = 'no'){
           상태 = 'warning'
           id('상태표시').src = '/resources/images/warning.svg'
           id('상태풍선').addEventListener('click', function() {
               window.open('https://open.kakao.com/o/spRmC1Rc')
+          })
+      } else {
+          상태 = 'approved'
+          id('상태표시').src = '/resources/images/approved.svg'
+          id('상태풍선').addEventListener('click', function() {
+              window.open(decodeURIComponent(getParameter('approved')))
           })
       }
       
