@@ -119,11 +119,13 @@
           var 아이디 = '0'.repeat(15 - String(parseInt(getParameter('kak'), 32)).length) + String(parseInt(getParameter('kak'), 32))
           id('카카오이동').addEventListener('click', function() {
               id('카카오이동').innerHTML = '로딩중...'
-              appCheck('kakaotalk://kakaopay/money/to/qr?qr_code=281006011' + 아이디 + (금액*8).toString(16) + 'Eedo',5000).then(if(result){
-                  id('카카오이동').innerHTML = '카카오 송금합니다.'
-              }else{
-                  alert('카카오톡 앱이 깔려있지 않거나 열 수 없는 환경에서 접속하셨습니다. 다른 송금 방식을 선택해주세요.')
-                  id('카카오이동').innerHTML = '카카오 송금합니다.'
+              appCheck('kakaotalk://kakaopay/money/to/qr?qr_code=281006011' + 아이디 + (금액*8).toString(16) + 'Eedo',5000).then(function(result){
+                  if(result){
+                      id('카카오이동').innerHTML = '카카오 송금합니다.'
+                  }else{
+                      alert('카카오톡 앱이 깔려있지 않거나 열 수 없는 환경에서 접속하셨습니다. 다른 송금 방식을 선택해주세요.')
+                      id('카카오이동').innerHTML = '카카오 송금합니다.'
+                  }
               })
           })
       } else {
