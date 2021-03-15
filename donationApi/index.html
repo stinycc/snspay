@@ -119,7 +119,7 @@
           var 아이디 = '0'.repeat(15 - String(parseInt(getParameter('kak'), 32)).length) + String(parseInt(getParameter('kak'), 32))
           id('카카오이동').addEventListener('click', function() {
               id('카카오이동').innerHTML = '로딩중...'
-              appCheck('kakaotalk://kakaopay/money/to/qr?qr_code=281006011' + 아이디 + (금액*8).toString(16) + 'Eedo', 5000).then(function(result){
+              appCheck('kakaotalk://kakaopay/money/to/qr?qr_code=281006011' + 아이디 + (금액*8).toString(16) + 'Eedo', 3000).then(function(result){
                   if(result){
                       id('카카오이동').innerHTML = '카카오 송금합니다.'
                   }else{
@@ -143,7 +143,7 @@
           
           id('토스이동').addEventListener('click', function() {
               id('토스이동').innerHTML = '로딩중...'
-              appCheck('supertoss://send?title=송금&bankCode=' + bank1[0] + '&accountNo=' + bank1[1] + '&amount=' + 금액, 5000).then(function(result){
+              appCheck('supertoss://send?title=송금&bankCode=' + bank1[0] + '&accountNo=' + bank1[1] + '&amount=' + 금액, 3000).then(function(result){
                   if(result){
                       id('토스이동').innerHTML = '토스 송금합니다.'
                   }else{
