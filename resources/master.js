@@ -75,7 +75,7 @@ function getParameter(name) {
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function appCheck(scheme,delay){
+appCheck = function(scheme,delay){
     return new Promise(function(resolve, reject) {
         location.href = scheme
         heartbeat = setInterval(function intervalHeartbeat(){
