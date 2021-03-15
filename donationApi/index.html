@@ -136,7 +136,7 @@
           
           id('토스이동').addEventListener('click', function() {
               ifNoApp(function(){alert('토스 앱이 깔려있지 않거나 열 수 없는 환경에서 접속하셨습니다. 다른 송금 방식을 선택해주세요.')});
-              location.href = 'intent://send?title=송금&bankCode=' + bank1[0] + '&accountNo=' + bank1[1] + '&amount=' + 금액 + '#Intent;scheme=supertoss;package=viva.republica.toss;end'
+              location.href = 'supertoss://send?title=송금&bankCode=' + bank1[0] + '&accountNo=' + bank1[1] + '&amount=' + 금액
           })
         
           id('은행1').src = '/resources/images/bank/' + bank1[0] + '.png'
