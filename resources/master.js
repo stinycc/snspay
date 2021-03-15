@@ -75,7 +75,8 @@ function getParameter(name) {
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function appCheck(delay){
+function appCheck(scheme,delay){
+    location.href = scheme
     heartbeat = setInterval(function intervalHeartbeat(){
         if(document.webkitHidden || document.hidden){
             clearTimers();
