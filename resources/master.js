@@ -75,6 +75,28 @@ function getParameter(name) {
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
+function ifNoApp(msg){
+    function clearTimers(){
+        clearInterval(heartbeat);
+        clearTimeout(timer);
+    }
+
+    function intervalHeartbeat(){
+        if(document.webkitHidden || document.hidden){
+            clearTimers();
+        }
+    }
+    heartbeat = setInterval(intervalHeartbeat, 200);
+    var deLay = 1000;
+    timer = setTimeout(function() {
+        msg()
+    }, deLay);
+}
+
+function mobileCheck() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function animation(element,animationStyle){
     targetElement = id(element)
     targetElement.style.animation = ''
@@ -88,10 +110,6 @@ function id(elementId){
 
 function pickRandom(array) {
     return array[Math.floor(Math.random() * array.length)];
-}
-
-function mobileCheck() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 //For browsers that doesn't support replaceAll function
