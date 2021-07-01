@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html style='color:white; overflow:hidden; font-family:GmarketSansLight;'>
   <head>
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/snspay/resources/images/favicon.ico">
     <title></title>
     <meta name='description' content="">
     <meta name='theme-color' content='#151515'>
@@ -9,8 +9,8 @@
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
   </head>
   <body style='overflow:hidden;'>
-    <link href='/resources/master.css' rel='stylesheet' type='text/css'>
-    <script src='/resources/master.js'></script>
+    <link href='/snspay/resources/master.css' rel='stylesheet' type='text/css'>
+    <script src='/snspay/resources/master.js'></script>
     <input id='복사용' type='text' R='z-index:-5; font-size:10px; padding:0; margin:0;' style='position:absolute; opacity:0'>
     <div id='덮개프레임' style='position:absolute; z-index:2; pointer-events:none; overflow:hidden'>
       <div id='카카오덮개' R='width:h(100); height:h(100); min-width:w(100); min-height:w(100);' style='position:absolute; background:#f5bc00; transform:scale(0); pointer-events:auto;'></div>
@@ -32,9 +32,9 @@
       <div id='옵션박스' class='vertical' style='max-width:500px; max-height:435.5px;'>
         <div style='position:absolute; z-index:1;'>
           <div R='height:h(5);'></div>
-          <img id='카카오' src='/resources/images/kakao.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
-          <img id='토스' src='/resources/images/toss.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
-          <img id='은행' src='/resources/images/bank.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
+          <img id='카카오' src='/snspay/resources/images/kakao.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
+          <img id='토스' src='/snspay/resources/images/toss.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
+          <img id='은행' src='/snspay/resources/images/bank.png' R='width:w(87); height:w(87/4.7); margin:h(1.25); border-radius:h(5);' style='cursor:pointer;'>
           <div class='bottomCenterAlign' R='height:h(15); font-size:w(4.1);'>
             <span style='cursor:pointer;' onclick='window.open("https://SNSpay.cc", "_blank")'><a>Powered by</a> <b>SNSpay.cc</b></span>
           </div>
@@ -51,12 +51,12 @@
         </div>
         <div id='은행박스' style='display:none; position:absolute; z-index:3;'>
           <div R='height:h(40);'>
-            <img id='은행1' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
-            <img id='은행2' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
+            <img id='은행1' src='/snspay/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
+            <img id='은행2' src='/snspay/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
           </div>
           <div R='height:h(40);'>
-            <img id='은행3' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
-            <img id='은행4' src='/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
+            <img id='은행3' src='/snspay/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
+            <img id='은행4' src='/snspay/resources/images/bank/000.png' R='height:h(80); margin:w(3)'>
           </div>
         </div>
       </div>
@@ -79,13 +79,13 @@
       
       if(getParameter('app') == 'no'){
           상태 = 'warning'
-          id('상태표시').src = '/resources/images/warning.svg'
+          id('상태표시').src = '/snspay/resources/images/warning.svg'
           id('상태풍선').addEventListener('click', function() {
               window.open('https://open.kakao.com/o/spRmC1Rc')
           })
       } else {
           상태 = 'approved'
-          id('상태표시').src = '/resources/images/approved.svg'
+          id('상태표시').src = '/snspay/resources/images/approved.svg'
           id('상태풍선').addEventListener('click', function() {
               window.open(decodeURIComponent(getParameter('approved')))
           })
@@ -153,7 +153,7 @@
               })
           })
         
-          id('은행1').src = '/resources/images/bank/' + bank1[0] + '.png'
+          id('은행1').src = '/snspay/resources/images/bank/' + bank1[0] + '.png'
           id('은행1').className = 'button'
           id('은행1').addEventListener('click', function() {
               id('복사용').value = bankName[bank1[0]] + ": " + bank1[1] + " " + "(" + 복사용금액 + bank1[2] + ")"
@@ -165,7 +165,7 @@
       }
       if(getParameter('2')){
           var bank2 = getParameter('2').split('.')
-          id('은행2').src = '/resources/images/bank/' + bank2[0] + '.png'
+          id('은행2').src = '/snspay/resources/images/bank/' + bank2[0] + '.png'
           id('은행2').className = 'button'
           id('은행2').addEventListener('click', function() {
               id('복사용').value = bankName[bank2[0]] + ": " + bank2[1] + " " + "(" + 복사용금액 + bank2[2] + ")"
@@ -177,7 +177,7 @@
       }
       if(getParameter('3')){
           var bank3 = getParameter('3').split('.')
-          id('은행3').src = '/resources/images/bank/' + bank3[0] + '.png'
+          id('은행3').src = '/snspay/resources/images/bank/' + bank3[0] + '.png'
           id('은행3').className = 'button'
           id('은행3').addEventListener('click', function() {
               id('복사용').value = bankName[bank3[0]] + ": " + bank3[1] + " " + "(" + 복사용금액 + bank3[2] + ")"
@@ -189,7 +189,7 @@
       }
       if(getParameter('4')){
           var bank4 = getParameter('4').split('.')
-          id('은행4').src = '/resources/images/bank/' + bank4[0] + '.png'
+          id('은행4').src = '/snspay/resources/images/bank/' + bank4[0] + '.png'
           id('은행4').className = 'button'
           id('은행4').addEventListener('click', function() {
               id('복사용').value = bankName[bank4[0]] + ": " + bank4[1] + " " + "(" + 복사용금액 + bank4[2] + ")"
@@ -212,7 +212,7 @@
               id('덮개프레임').setAttribute('R', 'width:h(100/16*10); height:h(100);')
               id('상태풍선').style.bottom = ''
               id('상태풍선').setAttribute('R', 'height:h(175); top:h(100);')
-              id('상태풍선').src = '/resources/images/' + 상태 + 'DescriptionTop.png'
+              id('상태풍선').src = '/snspay/resources/images/' + 상태 + 'DescriptionTop.png'
           }else{
               id('가로세로모드').className = 'full noDrag'
               id('이미지박스').setAttribute('R', 'width:w(32); height:w(32); margin:0 0 0 w(3);')
@@ -221,7 +221,7 @@
               id('덮개프레임').setAttribute('R', 'width:w(100); height:h(100);')
               id('상태풍선').style.top = ''
               id('상태풍선').setAttribute('R', 'height:h(175); bottom:h(100);')
-              id('상태풍선').src = '/resources/images/' + 상태 + 'DescriptionBottom.png'
+              id('상태풍선').src = '/snspay/resources/images/' + 상태 + 'DescriptionBottom.png'
           }
           resizeResponsiveElements()
       }
